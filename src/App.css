@@ -27,7 +27,7 @@ body {
   background-color: #2e2e2e;
   padding: 4px 5px;
   min-height: 26px;
-  margin: 2px 0;
+  margin: 4px 0;
   cursor: pointer;
 }
 
@@ -85,14 +85,14 @@ body {
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -20%;
   transform: translateX(-50%);
   animation: bufferSwipe 1.5s ease infinite;
 }
 
 @keyframes bufferSwipe {
   from {
-    left: 0;
+    left: -20%;
   }
   to {
     left: 140%;

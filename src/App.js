@@ -5,8 +5,8 @@ import { useEffect, useState, useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 import * as $ from 'jquery'
 
-// const server = 'http://localhost:4000/'
-const server = 'https://notestack-server.onrender.com/'
+const server = 'http://localhost:4000/'
+// const server = 'https://notestack-server.onrender.com/'
 
 export default function App() {
   const newSubObj = () => {return {txt: "", id: uuid(), open: false, edit: true, subs:[]}}
@@ -88,7 +88,6 @@ export default function App() {
     axios.post(`${server}save`, stackRef.current)
     .then(res => {
         setBuffering(false)
-        console.log(res)
       })
   }
   
@@ -270,7 +269,7 @@ export default function App() {
     if (sub.txt.length < 1) removeSub(sub.id)
     setUnsaved(true)
     setEditing(false)
-    setStack(temp)
+    setStack({...temp})
   }
   
   function newStack() {
@@ -449,7 +448,7 @@ export default function App() {
             selectStack={selectStack}
             setSelected={(id) => {selectStack(id)}}
             keys={keys}
-            editOver={() => {setEditing(false)}}
+            editOver={() => {endEdit(); setEditing(false)}}
             showCount={showCount}
           />
         })}
