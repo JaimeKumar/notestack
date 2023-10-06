@@ -306,7 +306,7 @@ export default function App() {
   function moveStack(n) {    
     if (!selectedRef.current) return;
     setUnsaved(true)
-    let temp = {...stack}
+    let temp = {...stackRef.current}
     let parent = findParent(temp.subs)
     if (!parent) parent = temp;
     let sub = findSub(temp.subs)
