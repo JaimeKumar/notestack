@@ -5,8 +5,8 @@ import { useEffect, useState, useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 import * as $ from 'jquery'
 
-const server = 'http://localhost:4000/'
-// const server = 'https://notestack-server.onrender.com/'
+// const server = 'http://localhost:4000/'
+const server = 'https://notestack-server.onrender.com/'
 
 export default function App() {
   const newSubObj = () => {return {txt: "", id: uuid(), open: false, edit: true, subs:[]}}
